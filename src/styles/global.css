@@ -1,0 +1,268 @@
+/*
+    Tabi website styles
+    Change colors, fonts and sizes in :root below.
+    Every page and component reads these values.
+*/
+
+:root {
+    /* Colors */
+    --color-blue: #4385AE;
+    --color-blue-light: #C9E1EF;
+    --color-blue-text: #2F6A90;
+
+    --color-orange: #F58E11;
+    --color-orange-light: #F8ECE2;
+    --color-orange-text: #9A5300;
+
+    --color-text: #111114;
+    --color-text-secondary: #5b5b63;
+    --color-bg: #F2F2F7;
+    --color-card: #FFFFFF;
+    --color-border: #E3E3E8;
+
+    /* Typography */
+    --font-sans: 'Inter Variable', 'Inter', -apple-system, BlinkMacSystemFont, 
+    'Segoe UI', sans-serif;
+
+    --text-h1: clamp(2.5rem, 4vw + 1rem, 4rem);
+    --text-h2: clamp(2rem, 2.5vw + 1rem, 2.75rem); 
+    --text-h3: 1.5rem;
+    --text-lead: 1.3125rem;
+    --text-body: 1.125rem;
+    --text-small: 1rem;
+
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-semibold: 600;
+    --weight-bold: 700;
+    --weight-heavy: 800;
+
+    --leading-tight: 1.1;
+    --leading-body: 1.55;
+
+    /* Spacing */
+    --radius-sm: 14px;
+    --radius-md: 24px;
+    --radius-lg: 32px;
+    --radius-full: 999px;
+
+    --max-width: 1120px;
+    --guter: 24px;
+    --section-space: 88px;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    color: var(--color-text-secondary);
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+p {
+    margin: 0;
+}
+
+a {
+    color: var(--color-blue-text);
+    text-underline-offset: 3px;
+}
+
+:focus-visible {
+    outline: 3px solid var(--color-blue);
+    outline-offset: 3px;
+}
+
+/* Headings */
+h1,
+h2,
+h3 {
+    margin: 0;
+    line-height: var(--leading-tight);
+    color: var(--color-text);
+}
+
+h1 {
+    font-size: var(--text-h1);
+    font-weight: var(--weight-heavy);
+    letter-spacing: -0.03em;
+}
+
+h2 {
+    font-size: var(--text-h2);
+    font-weight: var(--weight-heavy);
+    letter-spacing: -0.02em;
+}
+
+h3 {
+  font-size: var(--text-h3);
+  font-weight: var(--weight-bold);
+  line-height: 1.25;
+}
+
+/* Text helpers */
+
+.lead {
+    font-size: var(--text-lead);
+    line-height: 1.5;
+}
+
+.text-secondary {
+    color: var(--color-text-secondary);
+}
+
+.text-small {
+    font-size: var(--text-small);
+}
+
+/* Layout helpers */
+
+.container {
+    max-width: var(--max-width);
+    margin-inline: auto;
+    padding-inline: var(--guter);
+}
+
+.section {
+    padding-block: var(--section-space);
+}
+
+.section-white {
+  background: var(--color-card);
+}
+
+.section-blue {
+  background: var(--color-blue-light);
+}
+
+.stack > * + * {
+  margin-top: 16px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Components */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 56px;
+  padding: 0 26px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  font: inherit;
+  font-size: 1.1875rem;
+  font-weight: var(--weight-bold);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Orange button: dark text, because white on #F58E11 is too low contrast */
+.btn-primary {
+  background: var(--color-orange);
+  color: var(--color-text);
+}
+
+.btn-primary:hover {
+  filter: brightness(0.95);
+}
+
+.btn-secondary {
+  background: var(--color-orange-light);
+  border-color: var(--color-orange);
+  color: var(--color-text);
+}
+
+.btn-dark {
+  background: var(--color-text);
+  color: #FFFFFF;
+}
+
+/* Fotter */
+
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  background: var(--color-bg);
+}
+ 
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-block: 28px 40px;
+}
+ 
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--text-small);
+}
+ 
+.site-footer__links a {
+  display: inline-block;
+  padding-block: 10px; /* larger tap target */
+}
+ 
+/* ---------- Long text pages (Privacy, Terms, About) ---------- */
+ 
+.page-header {
+  padding-top: 24px;
+}
+ 
+.back-link {
+  display: inline-block;
+  padding-block: 10px;
+  font-weight: var(--weight-semibold);
+}
+ 
+.prose {
+  max-width: 760px;
+}
+ 
+.prose > * + * {
+  margin-top: 16px;
+}
+ 
+.prose h1 + p {
+  margin-top: 8px;
+}
+ 
+.prose h2 {
+  margin-top: 48px;
+  font-size: 1.75rem; /* smaller than page h2s, these are sub-sections */
+}
+ 
+.prose ul {
+  padding-left: 1.25em;
+}
+ 
+.prose li + li {
+  margin-top: 10px;
+}

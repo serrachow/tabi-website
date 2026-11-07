@@ -1,16 +1,50 @@
 ---
+import Base from '../layouts/Base.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Tabi</h1>
-	</body>
-</html>
+<Base title="Tabi – Medication reminders for families">
+  <main>
+    <section class="section">
+      <div class="container stack">
+        <span class="pill">Medication reminders for iPhone</span>
+        <h1>Help your loved ones stay on top of their meds.</h1>
+        <p class="lead text-secondary">
+          The simple app that reminds them when each dose is due, tracks what's been
+          taken, and keeps family and caregivers in the loop.
+        </p>
+        <p>
+          <a class="btn btn-primary" href="#download">Download for iPhone</a>
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-white">
+      <div class="container">
+        <h2>How Tabi works</h2>
+        <div class="grid" style="margin-top: 32px">
+          <div class="card" style="background: var(--color-bg)">
+            <h3>Scan the label</h3>
+            <p class="text-secondary" style="margin-top: 8px">
+              Point your camera at the bottle and Tabi fills in the name and dose.
+            </p>
+          </div>
+          <div class="card" style="background: var(--color-bg)">
+            <h3>Get a reminder</h3>
+            <p class="text-secondary" style="margin-top: 8px">
+              When a dose is due, your phone tells you. Tap Take and it's done.
+            </p>
+          </div>
+          <div class="card" style="background: var(--color-bg)">
+            <h3>Share with family</h3>
+            <p class="text-secondary" style="margin-top: 8px">
+              Invite a family member or caregiver to follow along from afar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
