@@ -1,0 +1,17 @@
+---
+// Shown after someone sends contact form.
+import Base from '../layouts/Base.astro';
+import Navbar from '../components/Navbar.astro';
+---
+
+<Base title="Thanks - Tabi">
+  <Navbar />
+  <main class="section">
+    <div class="container stack" style="max-width: 640px">
+        <p class="eyebrow">Message sent</p>
+        <h1>Thanks for getting in touch.</h1>
+        <p class="lead text-secondary">We'll get back to you by email</p>
+        <p><a class="btn btn-secondary" href="/">Back to Tabi</a></p>
+    </div>
+  </main>
+</Base>
